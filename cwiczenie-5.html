@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>5 - Instrukcja warunkowa w JavaScript</title>
+	<link href="arkusz-cwiczenia.css" rel="stylesheet">
+	
+</head>
+
+<body>
+
+	<label> Którą bramkę wybierasz: 
+	<input type="number" id="bramka"> </label>
+
+	<input type="submit" value="Wybieram bramkę" onclick="teleturniej()">
+
+	<div id="wynik"></div>
+	
+	<script>
+	
+		function teleturniej()
+		{
+			var lucky = Math.floor(Math.random() * 3) + 1;
+			var bramka = parseInt(document.getElementById('bramka').value);
+			var t = (bramka===lucky)?"Hurra! W bramce nr " + lucky + " jest samochód!":"Niestety! Samochód znajdował się w bramce nr " + lucky;
+			document.getElementById('wynik').innerHTML = t;
+			//alert(lucky);
+			//alert(t);
+			//if (lucky == bramka) document.getElementById('wynik').innerHtml = "Hurra! W bramce nr" + bramka + "jest samochód!"
+			//else document.getElementById('wynik').innerHtml = "Niestety! Samochód znajdował się w bramce nr" + lucky + "..."
+		}
+
+	</script>
+
+</body>
+</html>
